@@ -37,7 +37,7 @@ bytemuck = "1.0"
 elefont = { features = ["rusttype", "unicode-normalization"], optional = true, path = "../elefont" }
 gestalt = { optional = true, path = "../gestalt" }
 golem = { features = ["std"], path = "../golem" }
-image = { version = "0.22", default-features = false, features = ["png_codec", "jpeg"] }
+image = { version = "0.24.3", default-features = false, features = ["png", "jpeg"] }
 instant = "0.1.2"
 log = "0.4"
 mint = "0.5.3"
