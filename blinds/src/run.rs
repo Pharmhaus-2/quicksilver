@@ -49,18 +49,20 @@ where
     T: 'static + Future<Output = ()>,
     F: 'static + FnOnce(Window, Context, EventStream) -> T,
 {
-    let stream = EventStream::new();
-    let buffer = stream.buffer();
-
-    let event_loop = EventLoop::new();
-    let (window, ctx) = WindowContents::new_gl(&event_loop, settings);
-    let window = Arc::new(window);
-    let pool = LocalPool::new();
-    pool.spawner()
-        .spawn_local(app(Window(window.clone()), ctx, stream))
-        .expect("Failed to start application");
-
-    do_run(event_loop, window, pool, buffer)
+    unsafe {
+        let stream = EventStream::new();
+        let buffer = stream.buffer();
+    
+        let event_loop = EventLoop::new();
+        let (window, ctx) = WindowContents::new_gl(&event_loop, settings);
+        let window = Arc::new(window);
+        let pool = LocalPool::new();
+        pool.spawner()
+            .spawn_local(app(Window(window.clone()), ctx, stream))
+            .expect("Failed to start application");
+    
+        do_run(event_loop, window, pool, buffer)
+    }
 }
 
 fn do_run(
