@@ -79,8 +79,10 @@ where
         #[cfg(not(target_arch = "wasm32"))]
         {
             if settings.use_static_dir && std::env::set_current_dir("static").is_err() {
-                log::warn!("Warning: no asset directory found. Please place all your assets inside a directory called 'static' so they can be loaded");
-                log::warn!("Execution continuing, but any asset-not-found errors are likely due to the lack of a 'static' directory.")
+                // log::warn!("
+                panic!("Warning: no asset directory found. Please place all your assets inside a directory called 'static' so they can be loaded");
+                // log::warn!("
+                panic!("Execution continuing, but any asset-not-found errors are likely due to the lack of a 'static' directory.");
             }
         }
 
