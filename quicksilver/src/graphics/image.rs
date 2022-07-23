@@ -40,7 +40,7 @@ impl Image {
     ///
     /// JPEG and PNG are supported
     pub fn from_encoded_bytes(gfx: &Graphics, raw: &[u8]) -> Result<Image, QuicksilverError> {
-        let img = image::load_from_memory(raw)?.to_rgba();
+        let img = image::load_from_memory(raw)?.to_rgba8();
         let width = img.width();
         let height = img.height();
         Ok(Image::from_raw(
