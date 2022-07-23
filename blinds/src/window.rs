@@ -121,7 +121,7 @@ impl WindowContents {
     }
 
     //#[cfg(feature = "gl")]
-    pub(crate) fn new_gl(el: &EventLoop<()>, settings: Settings) -> (WindowContents, Context) {
+    pub(crate) unsafe fn new_gl(el: &EventLoop<()>, settings: Settings) -> (WindowContents, Context) {
         let window = WindowContents::new(el, settings);
 
         #[cfg(target_arch = "wasm32")]

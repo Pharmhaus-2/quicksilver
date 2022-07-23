@@ -74,7 +74,6 @@ where
 {
     #[cfg(feature = "easy-log")]
     set_logger(settings.log_level);
-
     blinds::run_gl((&settings).into(), move |window, ctx, events| {
         #[cfg(not(target_arch = "wasm32"))]
         {

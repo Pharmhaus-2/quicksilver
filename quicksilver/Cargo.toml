@@ -46,7 +46,7 @@ rusttype = { version = "0.9.2", optional = true }
 serde = {version = "1", optional = true, features = ["derive"] }
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-simple_logger = { version = "1.4", optional = true }
+simple_logger = { version = "2.2.0", optional = true }
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 web_logger = { version = "0.2", optional = true }
