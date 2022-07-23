@@ -4,6 +4,7 @@ members = [
     "elefont",
     "gestalt",
     "golem",
+    "mergui",
     "platter",
     "quicksilver",
 ]
