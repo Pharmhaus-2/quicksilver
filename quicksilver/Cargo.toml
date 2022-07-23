@@ -32,6 +32,7 @@ web-sys = ["gestalt/web-sys", "platter/web-sys", "blinds/web-sys", "golem/web-sy
 maintenance = { status = "passively-maintained" }
 
 [dependencies]
+rodio = { version="0.15.0" }
 blinds = { default-features = true, path = "../blinds"} # features = ["image"], features = ["gl"]
 bytemuck = "1.0"
 elefont = { features = ["rusttype", "unicode-normalization"], optional = true, path = "../elefont" }
